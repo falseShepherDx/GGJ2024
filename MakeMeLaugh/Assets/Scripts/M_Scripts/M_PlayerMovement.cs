@@ -11,9 +11,10 @@ public class M_PlayerMovement : MonoBehaviour {
     private Rigidbody rb;
 
     //Rotation and look
-    private float xRotation;
+    public float xRotation;
     private float sensitivity = 50f;
     private float sensMultiplier = 1f;
+    public bool allowMouseRotation = true;
     
     //Movement
     public float moveSpeed = 4500;
@@ -166,6 +167,8 @@ public class M_PlayerMovement : MonoBehaviour {
     
     private float desiredX;
     private void Look() {
+        if (!allowMouseRotation)
+            return;
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
 
@@ -181,6 +184,10 @@ public class M_PlayerMovement : MonoBehaviour {
         playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, 0);
         orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
     }
+    public Vector2 GetMouseRotation() {
+        return new Vector2(desiredX, xRotation);
+    }
+    
 
     private void CounterMovement(float x, float y, Vector2 mag) {
         if (!grounded || jumping) return;
