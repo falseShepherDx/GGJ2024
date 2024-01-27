@@ -15,12 +15,12 @@ public class B_Humor : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             Debug.Log("A");
             Humoric_Shot();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("S");
             Dead();
