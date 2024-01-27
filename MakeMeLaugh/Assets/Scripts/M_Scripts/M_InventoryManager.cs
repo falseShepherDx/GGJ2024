@@ -11,6 +11,7 @@ public class M_InventoryManager : MonoBehaviour
     public List<ItemSO> Items = new List<ItemSO>();
     public int maxItems = 3;
     
+    
 
     private void Awake()
     {
@@ -27,13 +28,14 @@ public class M_InventoryManager : MonoBehaviour
     public void Add(ItemSO item)
     {
             Items.Add(item);
-            
+            M_InventoryUI.Instance.UpdateUI();
             
     }
 
     public void Remove(ItemSO item)
     {
         Items.Remove(item);
+        M_InventoryUI.Instance.UpdateUI();
         
     }
 
