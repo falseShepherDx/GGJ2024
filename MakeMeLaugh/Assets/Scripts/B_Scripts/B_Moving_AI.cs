@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-[RequireComponent(typeof(NavMeshAgent))] 
+[RequireComponent(typeof(NavMeshAgent))]
 
 public class B_Moving_AI : MonoBehaviour
 {
@@ -19,12 +19,13 @@ public class B_Moving_AI : MonoBehaviour
 
     void Update()
     {
+
         if (Vector3.Distance(next_Pos, transform.position) <= 1.5f)
         {
             next_Pos = B_Random_Path.Point_Ge(transform.position, radius);
             my_Agent.SetDestination(next_Pos);
         }
-        
+
     }
     private void OnDrawGizmos()
     {
@@ -35,4 +36,5 @@ public class B_Moving_AI : MonoBehaviour
         }
 
     }
+
 }
