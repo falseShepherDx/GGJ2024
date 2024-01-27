@@ -15,3 +15,4 @@ MonoBehaviour:
   id: 4
   itemName: Error
   icon: {fileID: 21300000, guid: d17c49b6c5ea31a49aafc79d4d4021b9, type: 3}
+  throwObj: {fileID: 3816115268421841063, guid: fb74662ebd4f88a45b3f1a59de554cd9, type: 3}

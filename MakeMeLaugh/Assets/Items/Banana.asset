@@ -15,3 +15,4 @@ MonoBehaviour:
   id: 1
   itemName: Banana
   icon: {fileID: 21300000, guid: efc90489c423ffa49bc6a3b6d9a06691, type: 3}
+  throwObj: {fileID: 7027404965913340588, guid: 55fd704d66c22884e9fd6bb36b14dcbf, type: 3}
