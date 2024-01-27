@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - canPickUp
+  - Worker
+  - Error
+  - Shit
+  - Banana
+  - Monkey
+  - Chicken
   layers:
   - Default
   - TransparentFX
