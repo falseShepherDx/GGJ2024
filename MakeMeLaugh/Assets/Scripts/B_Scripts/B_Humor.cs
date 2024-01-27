@@ -37,12 +37,10 @@ public class B_Humor : MonoBehaviour
         nvm.speed = 0;
         anim.SetBool("dead", true);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.name == this.gameObject.tag)
+       if (collision.gameObject.tag == this.gameObject.tag)
         {
-            Debug.Log("as");
-            Destroy(other.gameObject,0.1f);
             Humoric_Shot();
         }
     }
