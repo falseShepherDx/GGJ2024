@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class M_Chicken : MonoBehaviour, M_IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
+    public ItemSO item;
+
+    public void Interact()
     {
-        
+        if (M_InventoryManager.Instance != null)
+        {
+            if (M_InventoryManager.Instance.Items.Count < M_InventoryManager.Instance.maxItems)
+            {
+                M_InventoryManager.Instance.Add(item);
+                Debug.Log(item+ "added to inventory");
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Inventory Full");
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public string GetDescription()
     {
-        
+        return "Chicken";
     }
 }
