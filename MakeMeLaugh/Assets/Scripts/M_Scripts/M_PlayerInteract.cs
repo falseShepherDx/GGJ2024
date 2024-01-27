@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,10 +5,8 @@ public class M_PlayerInteract : MonoBehaviour
 {
     public Transform InteractionSource;
     public float InteractionRange;
-
     public GameObject InteractionUI;
     public TextMeshProUGUI interactionText;
-
     private void Update()
     {
         InteractionRay();
