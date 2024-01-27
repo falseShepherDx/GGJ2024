@@ -29,7 +29,7 @@ public class M_PlayerInteract : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                interactObj.Interact();
+                interactObj?.Interact();
                 
             }
         }
