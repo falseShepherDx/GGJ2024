@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class B_Humor : MonoBehaviour
 {
-    public GameObject[] humor_Objects;
+   
     void Start()
     {
-        Chose_Random_Object();  
+        
     }
-
-    void Chose_Random_Object()
+    void Update()
     {
-        Vector3 objectPos = new Vector3(transform.position.x, transform.position.y  , transform.position.z);
-        int randomIndex = Random.Range(0, humor_Objects.Length);
-
-        GameObject humor_Object = Instantiate(humor_Objects[randomIndex], objectPos, transform.rotation);
-        humor_Object.transform.parent = this.gameObject.transform;
-        humor_Object.GetComponent<BoxCollider>().enabled = false;
+        
     }
-   
+
+    void Humoric_Shot()
+    {
+     
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       if (collision.gameObject.tag == this.gameObject.tag)
+        {
+            Humoric_Shot();
+        }
+    }
 }
