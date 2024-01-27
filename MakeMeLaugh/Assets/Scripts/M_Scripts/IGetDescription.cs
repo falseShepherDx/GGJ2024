@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_ItemController : MonoBehaviour
+public interface IGetDescription
 {
-    public ItemSO Item;
-    
-    
+    public string GetDescription();
 }
