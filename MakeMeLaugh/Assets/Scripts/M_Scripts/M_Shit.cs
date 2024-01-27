@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class M_Shit : MonoBehaviour,M_IInteractable
 {
- 
+    public ItemSO item;
     public void Interact()
     {
-        //add to inventory
+        if (M_InventoryManager.Instance != null)
+        {
+            if (M_InventoryManager.Instance.Items.Count < M_InventoryManager.Instance.maxItems)
+            {
+                M_InventoryManager.Instance.Add(item);
+                Debug.Log(item+ "added to inventory");
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Inventory Full");
+            }
+        }
     }
 
     public string GetDescription()
