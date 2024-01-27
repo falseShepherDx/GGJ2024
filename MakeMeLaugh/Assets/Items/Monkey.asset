@@ -15,3 +15,4 @@ MonoBehaviour:
   id: 3
   itemName: Monkey
   icon: {fileID: 0}
+  throwObj: {fileID: 344536893563329836, guid: 983716808ed149a4283139db65da9088, type: 3}

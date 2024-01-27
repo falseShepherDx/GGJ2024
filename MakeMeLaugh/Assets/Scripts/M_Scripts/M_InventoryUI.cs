@@ -10,7 +10,6 @@ public class M_InventoryUI : MonoBehaviour
 {
   public List<GameObject> itemIcons;
   public static M_InventoryUI Instance;
-  private int selectedIndex = 0; 
   private void Awake()
   {
     Instance = this;
@@ -18,14 +17,7 @@ public class M_InventoryUI : MonoBehaviour
 
   public void UpdateUI()
   {
-    float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-
-    if (scrollInput != 0)
-    {
-      selectedIndex += Mathf.RoundToInt(scrollInput);
-      selectedIndex = Mathf.Clamp(selectedIndex, 0, M_InventoryManager.Instance.Items.Count - 1);
-      Debug.Log("Selected item: " + M_InventoryManager.Instance.Items[selectedIndex].itemName);
-    }
+   
     Transform slotsParent = transform;
     for (int i = 0; i < M_InventoryManager.Instance.Items.Count; i++)
     {
@@ -37,9 +29,8 @@ public class M_InventoryUI : MonoBehaviour
           iconImage.sprite = M_InventoryManager.Instance.Items[i].icon;
           
         }
-        if (i == selectedIndex)
+        if (i == M_PlayerScrollWheel.selectedIndex)
         {
-          
           iconImage.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
           iconImage.color = Color.yellow;
         }
