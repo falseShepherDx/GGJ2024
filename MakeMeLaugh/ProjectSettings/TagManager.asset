@@ -6,11 +6,11 @@ TagManager:
   tags:
   - canPickUp
   - Worker
-  - Error
-  - Shit
-  - Banana
-  - Monkey
-  - Chicken
+  - M_Muz
+  - M_Error
+  - M_ChickenToy
+  - M_Bok
+  - M_Monkey
   layers:
   - Default
   - TransparentFX
