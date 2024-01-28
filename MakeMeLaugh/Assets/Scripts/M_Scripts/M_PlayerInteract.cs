@@ -20,18 +20,20 @@ public class M_PlayerInteract : MonoBehaviour
         bool hitSomething = false;
         if (Physics.Raycast(ray, out hit, InteractionRange))
         {
-            hit.collider.gameObject.TryGetComponent(out M_IInteractable interactObj);
+            hit.collider.gameObject.TryGetComponent(out IGetDescription interactObj);
             if (interactObj != null)
             {
                 hitSomething = true;
                 interactionText.text = interactObj.GetDescription();
             }
-
-            if (Input.GetKeyDown(KeyCode.E))
+            hit.collider.gameObject.TryGetComponent(out M_IInteractable interactableObj);
+            if (interactableObj != null)
             {
-                interactObj?.Interact();
-                
+                hitSomething = true;
+                interactableObj.Interact();
             }
+            
+            
         }
         InteractionUI.SetActive(hitSomething);
     }
