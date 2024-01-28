@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce1795a436e24934fa541b6e0f88d174, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.35
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce1795a436e24934fa541b6e0f88d174, type: 3}
       propertyPath: m_LocalPosition.y
@@ -63,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ce1795a436e24934fa541b6e0f88d174, type: 3}
       propertyPath: m_Name
       value: M_Muz
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ce1795a436e24934fa541b6e0f88d174, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ce1795a436e24934fa541b6e0f88d174, type: 3}
+      propertyPath: m_TagString
+      value: canPickUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -110,9 +118,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &7289620585048768912
 BoxCollider:
   m_ObjectHideFlags: 0
