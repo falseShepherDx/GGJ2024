@@ -7,6 +7,7 @@ public class B_Humor : MonoBehaviour
 {
     NavMeshAgent nvm;
     public Animator anim;
+    public bool isLaughed = false;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class B_Humor : MonoBehaviour
 
     void Humoric_Shot()
     {
+        isLaughed = true;
         nvm.speed = 0;
         anim.SetBool("laugh" ,true);
     }
