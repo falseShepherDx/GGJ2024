@@ -7,6 +7,7 @@ public class B_Humor : MonoBehaviour
 {
     NavMeshAgent nvm;
     public Animator anim;
+    public bool isLaughed = false;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class B_Humor : MonoBehaviour
 
     void Humoric_Shot()
     {
+        isLaughed = true;
         nvm.speed = 0;
         anim.SetBool("laugh" ,true);
     }
@@ -37,10 +39,12 @@ public class B_Humor : MonoBehaviour
         nvm.speed = 0;
         anim.SetBool("dead", true);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-       if (collision.gameObject.tag == this.gameObject.tag)
+        if (other.gameObject.name == this.gameObject.tag)
         {
+            Debug.Log("as");
+            Destroy(other.gameObject,0.1f);
             Humoric_Shot();
         }
     }
